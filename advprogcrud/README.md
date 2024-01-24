@@ -20,7 +20,7 @@ The primary target users for Zeta Shop include individuals and businesses in nee
 
 Overall, the Zeta Shop project aims to create a convenient and reliable platform for purchasing laptops, providing a seamless online shopping experience for its diverse customer base.
 
-![alt Registration page](img.png "Registration page")
+![alt Registration page](advprogcurd/img.png "Registration page")
 
 ### Installation Guide:
 1. Install Golang: https://golang.org/dl/.
