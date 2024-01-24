@@ -20,7 +20,7 @@ Advanced Tech Shop caters to a wide range of users, including individuals and bu
 
 In essence, Advanced Tech Shop is committed to creating a convenient and trustworthy platform for purchasing laptops, offering a seamless online shopping experience for our diverse customer base.
 
-![alt Registration page](img.png "Registration page")
+![alt Registration page](img.jpg "Registration page")
 
 ### Installation Guide:
 1. Install Golang: https://golang.org/dl/.
