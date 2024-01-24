@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: url('bckr.png') center/cover no-repeat;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: lightslategray;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      width: 350px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #333333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      box-sizing: border-box;
+      border: 2px solid #cccccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background-color: saddlebrown;
+      color: #ffffff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    button:hover {
+      background-color: sandybrown;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Registration</h2>
+  <form id="registrationForm">
+    <!--<label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    -->
+
+    <input type="text" id="username" placeholder="Enter your username" />
+    <input type="text" id="email" placeholder="Enter your email" />
+    <input type="text" id="password" placeholder="Enter your password" />
+    <button type="button" onclick="submitForm()">Register</button>
+  </form>
+</div>
+
+<script>
+  function submitForm() {
+    var username = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    var data = {
+      username: username,
+      email: email,
+      password: password
+    };
+
+    fetch("http://localhost:8080/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+              return response.json();
+            })
+            .then(data => {
+              console.log(data);
+              alert(data.message);
+            })
+            .catch(error => {
+              console.error("Error:", error.message);
+              alert("Error occurred. Please check the console for details.");
+            });
+  }
+</script>
+
+</body>
+</html>
